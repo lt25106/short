@@ -11,6 +11,9 @@ app.set("views", "views")
 app.set('view engine', 'ejs')
 app.use(express.static("static"))
 app.use(express.urlencoded({ extended: true }))
+app.get("/", (req, res) => {
+  res.sendFile("index.html")
+})
 app.post("/new", async (req, res) => {
   const { long, short } = req.body as links
   const success = !await client.exists(short)
@@ -18,7 +21,7 @@ app.post("/new", async (req, res) => {
   if (!success) return
   client.set(short, long)
 })
-app.get(":short", async (req, res) => {
+app.get("/:short", async (req, res) => {
   res.redirect((await client.get(req.params.short))!.toString())
 })
 app.listen(3000, () => {
