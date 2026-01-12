@@ -15,8 +15,11 @@
 <body>
   <% if (success) { %>
     <h1>Your link has been shortened!</h1>
-    Link: https://thebestmostpracticallinkshorterner.vercel.app/<%= short %><br>
-    Original: <%= long %>
+    Link: 
+    <a href="https://thebestmostpracticallinkshorterner.vercel.app/<%= short %>">
+      https://thebestmostpracticallinkshorterner.vercel.app/<%= short %>
+    </a><br>
+    Original: <a href="<%= long %>"><%= long %></a>
   <% } else { %>
     <h1>The link was taken. Try again.</h1>
     <form action="/new" method="post">
