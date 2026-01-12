@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
-  "scripts": {
-    "build": "esbuild frontend/**/*.ts --bundle --minify --format=esm --target=esnext --outdir=static",
-    "watch": "esbuild frontend/**/*.ts --bundle --minify --format=esm --target=esnext --outdir=static --watch"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
