@@ -19,7 +19,7 @@ app.post("/new", async (req, res) => {
   client.set(short, long)
 })
 app.get(":short", async (req, res) => {
-  res.redirect((await client.get(req.params.short))!)
+  res.redirect((await client.get(req.params.short))!.toString())
 })
 app.listen(3000, () => {
   console.log("http://localhost:3000")
