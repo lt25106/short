@@ -18,9 +18,10 @@ app.post("/new", async (req, res) => {
   if (!success) return
   client.set(short, long)
 })
-app.get("/favicon.ico", (req, res) => res.sendStatus(204));
 app.get("/:short", async (req, res) => {
-  res.redirect((await client.get(req.params.short))!.toString())
+  const link = await client.get(req.params.short)
+  if (!link) return
+  res.redirect(link.toString())
 })
 app.listen(3000, () => {
   console.log("http://localhost:3000")
