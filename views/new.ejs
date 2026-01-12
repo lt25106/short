@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="/c.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <% if (success) { %>
+      Your link has been shortened!
+    <% } else { %>
+      The link was taken
+    <% } %>
+  </title>
+</head>
+<body>
+  <% if (success) { %>
+    <h1>Your link has been shortened!</h1>
+    Link: https://thebestmostpracticallinkshorternereveripromisemakestheshortest.vercel.app/<%= short %><br>
+    Original: <%= long %>
+  <% } else { %>
+    <h1>The link was taken. Try again.</h1>
+    <form action="/new" method="post">
+      <input name="long" placeholder="Enter long link" required value="<%= long %>"><br><br>
+      <input name="short" placeholder="Enter shortcut" required><br><br>
+      <button type="submit">Shorten!</button>
+    </form>
+  <% } %> 
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+input, button {
+  border-radius: 9e9rem;
+  border: 0.125rem solid hsl(0, 0%, 46%);
+}
+body, input, button {
+  font-size: 1.75rem;
+  background-color: black;
+  color: white;
+}
+h1 {
+  font-size: 2rem;
+}
