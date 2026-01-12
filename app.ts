@@ -9,7 +9,7 @@ const client = createClient({
 await client.connect()
 app.set("views", "views")
 app.set('view engine', 'ejs')
-app.use(express.static("static"))
+app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true }))
 app.post("/new", async (req, res) => {
   const { long, short } = req.body as links
